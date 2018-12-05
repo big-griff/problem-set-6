@@ -11,7 +11,11 @@
  */
 
 function sayHello() {
-
+  const canvas = document.getElementById('canvas1');
+  const ctx = canvas.getContext('2d');
+  ctx.clearRect(0, 0, canvas.width, canvas.height)
+  ctx.font = "48px Sans-Serif"
+  ctx.strokeText("Hello, World!", 10, 50)
 }
 
 /*
@@ -38,7 +42,39 @@ function sayHello() {
  */
 
 function drawRectangle() {
-
+  const canvas = document.getElementById('canvas2');
+  const ctx = canvas.getContext('2d');
+  while (true){
+    height=prompt("Please enter desired height.");
+    height=Number(height);
+    if(height>=1 && Number.isInteger(height)){
+      break;
+    };
+  };
+  while (true){
+    width=prompt("Please enter desired width.");
+    width=Number(width);
+    if(width>=1 && Number.isInteger(width)){
+      break;
+    };
+  };
+  while (true){
+    x=prompt("Please enter desired x-coordinate.");
+    x=Number(x);
+    if(x>=5 && Number.isInteger(x)){
+      break;
+    };
+  };
+  while (true){
+    y=prompt("Please enter desired y-coordinate.");
+    y=Number(y);
+    if(y>=5 && Number.isInteger(y)){
+      break;
+    };
+  };
+  ctx.strokeStyle = 'black'
+  ctx. fillStyle = 'white'
+  ctx.fillRect(x, y, width, height);
 }
 
 /*
@@ -67,7 +103,16 @@ function drawRectangle() {
  */
 
 function drawColoredRectangle() {
-
+  const canvas = document.getElementById('canvas3');
+  const ctx = canvas.getContext('2d');
+  while (true){
+    color=prompt("Please enter desired color.");
+    if(color = black || blue || green || orange || purple || red || yellow){
+      break;
+    };
+  };
+  ctx. fillStyle =`${color}`
+  ctx.fillRect(10, 10, 100, 50);
 }
 
 /*
