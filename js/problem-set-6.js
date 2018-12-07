@@ -44,37 +44,23 @@ function sayHello() {
 function drawRectangle() {
   const canvas = document.getElementById('canvas2');
   const ctx = canvas.getContext('2d');
-  while (true){
-    height=prompt("Please enter desired height.");
-    height=Number(height);
-    if(height>=1 && Number.isInteger(height)){
-      break;
-    };
-  };
-  while (true){
-    width=prompt("Please enter desired width.");
-    width=Number(width);
-    if(width>=1 && Number.isInteger(width)){
-      break;
-    };
-  };
-  while (true){
-    x=prompt("Please enter desired x-coordinate.");
-    x=Number(x);
-    if(x>=5 && Number.isInteger(x)){
-      break;
-    };
-  };
-  while (true){
-    y=prompt("Please enter desired y-coordinate.");
-    y=Number(y);
-    if(y>=5 && Number.isInteger(y)){
-      break;
-    };
-  };
-  ctx.strokeStyle = 'black'
-  ctx. fillStyle = 'white'
-  ctx.fillRect(x, y, width, height);
+  height = prompt("Please enter desired height.");
+  width = prompt("Please enter desired width.");
+  x = prompt("Please enter desired x-coordinate.");
+  y = prompt("Please enter desired y-coordinate.");
+  if (height < 1) {
+    alert("Your height value is too low. It has to be greater than 1!")
+  }
+  else if (width < 1) {
+    alert("Your width value is too low. It has to be greater than 1!")
+  }
+  else if (x < 5) {
+    alert("Your x-coordinate value is too low. It has to be greater than 5!")
+  }
+  else if (y < 5) {
+    alert("Your y-coordinate value is too low. It has to be greater than 5!")
+  }
+  ctx.strokeRect(x, y, width, height);
 }
 
 /*
@@ -105,14 +91,18 @@ function drawRectangle() {
 function drawColoredRectangle() {
   const canvas = document.getElementById('canvas3');
   const ctx = canvas.getContext('2d');
-  while (true){
-    color=prompt("Please enter desired color.");
-    if(color = black || blue || green || orange || purple || red || yellow){
+  let color
+  while (1) {
+    color = prompt("Please enter desired color.")
+    if(color == "black" || color == "blue" || color == "green" || color == "orange" || color == "purple" || color == "red" || color == "yellow") {
       break;
-    };
-  };
-  ctx. fillStyle =`${color}`
-  ctx.fillRect(10, 10, 100, 50);
+    }
+    else {
+      alert(`${color} is not a supported color.`)
+    }
+    ctx.fillStyle = color;
+    ctx.fillRect(10, 10, 100, 50);
+  }
 }
 
 /*
@@ -145,7 +135,18 @@ function drawColoredRectangle() {
  */
 
 function drawTriangle() {
+  var canvas = document.getElementById('canvas4');
+    if (canvas.getContext) {
+      var ctx = canvas.getContext('2d');
+line1 = prompt("Side 1")
+line2 = prompt("Side 2")
 
+      ctx.beginPath();
+      ctx.moveTo(10, 10);
+      ctx.lineTo(10, line1);
+      ctx.lineTo(line1, line2);
+      ctx.fill();
+    }
 }
 
 /*
