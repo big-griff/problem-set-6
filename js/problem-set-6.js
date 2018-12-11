@@ -93,12 +93,12 @@ function drawColoredRectangle() {
   const ctx = canvas.getContext('2d');
   let color
   while (1) {
-    color = prompt("Please enter desired color.")
+    color = prompt("Please enter desired color.");
     if(color == "black" || color == "blue" || color == "green" || color == "orange" || color == "purple" || color == "red" || color == "yellow") {
       break;
     }
     else {
-      alert(`${color} is not a supported color.`)
+      alert(`${color} is not a supported color.`);
     }
     ctx.fillStyle = color;
     ctx.fillRect(10, 10, 100, 50);
@@ -135,17 +135,18 @@ function drawColoredRectangle() {
  */
 
 function drawTriangle() {
-  var canvas = document.getElementById('canvas4');
+    var canvas = document.getElementById('canvas4');
     if (canvas.getContext) {
       var ctx = canvas.getContext('2d');
-line1 = prompt("Side 1")
-line2 = prompt("Side 2")
+line1 = prompt("Side 1");
+line2 = prompt("Side 2");
 
       ctx.beginPath();
       ctx.moveTo(10, 10);
-      ctx.lineTo(10, line1);
-      ctx.lineTo(line1, line2);
-      ctx.fill();
+      ctx.lineTo(10, line1+10);
+      ctx.lineTo(line1+10, line2+10);
+      ctx.closePath();
+      ctx.stroke();
     }
 }
 
