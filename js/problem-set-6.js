@@ -136,13 +136,16 @@ function drawTriangle() {
       var ctx = canvas.getContext('2d');
 line1 = prompt("Side 1");
 line2 = prompt("Side 2");
-
+line3 = prompt("Side 3")
       ctx.beginPath();
       ctx.moveTo(10, 10);
-      ctx.lineTo(10, line1+10);
-      ctx.lineTo(line1+10, line2+10);
+      ctx.lineTo((10), (line1+10));
+      ctx.lineTo((line1+10), (line2+10));
       ctx.closePath();
       ctx.stroke();
+      console.log(line1);
+      console.log(line2);
+      console.log(line3);
     }
 }
 
